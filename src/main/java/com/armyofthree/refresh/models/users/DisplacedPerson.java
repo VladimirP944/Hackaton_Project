@@ -10,11 +10,19 @@ public class DisplacedPerson extends User {
     private boolean lookingToSellProducts;
     private String documents;
     private boolean pets;
+    private boolean appliedForHome;
 
     public DisplacedPerson(String name, String email, String phone, String profilePhoto, int numberOfPeople, String documents, String password) {
         super(name, email, phone, UserType.DISPLACED_PERSON, profilePhoto, password);
         this.numberOfPeople = numberOfPeople;
         this.documents = documents;
+    }
+    public void setAppliedForHome(Boolean appliedForHome) {
+        this.appliedForHome = appliedForHome;
+    }
+
+    public Boolean getAppliedForHome() {
+        return this.appliedForHome;
     }
 
     public boolean isLookingForJob() {
