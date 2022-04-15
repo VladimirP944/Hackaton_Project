@@ -1,4 +1,6 @@
 package com.armyofthree.refresh.models.dao.implementations.jdbc;
 
-public class UserDaoJdbc {
+import com.armyofthree.refresh.models.dao.UserDao;
+
+public class UserDaoJdbc implements UserDao {
 }
