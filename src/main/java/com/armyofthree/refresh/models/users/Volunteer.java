@@ -16,8 +16,8 @@ public class Volunteer extends User{
     private String identityCard;
 
 
-    public Volunteer(String name, String address, String email, String phone, UserType type, String profilePhoto, String record, String identityCard, String password) {
-        super(name, address, email, phone, UserType.VOLUNTEER, profilePhoto, password);
+    public Volunteer(String name, String email, String phone, UserType type, String profilePhoto, String record, String identityCard, String password) {
+        super(name, email, phone, UserType.VOLUNTEER, profilePhoto, password);
         this.record = record;
         this.identityCard = identityCard;
         this.homes = new ArrayList<Location>();
