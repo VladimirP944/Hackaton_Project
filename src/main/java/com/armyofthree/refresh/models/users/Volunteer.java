@@ -1,7 +1,6 @@
 package com.armyofthree.refresh.models.users;
 
-import com.armyofthree.refresh.models.services.Location;
-import com.armyofthree.refresh.models.services.MedicalAssistance;
+import com.armyofthree.refresh.models.services.*;
 
 import java.util.List;
 
