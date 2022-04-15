@@ -58,7 +58,37 @@ public class VolunteerDaoJdbc implements VolunteerDao {
 
     @Override
     public Volunteer getVolunteer(String username) {
-        return null;
+        try(Connection conn = dataSource.getConnection()) {
+            String sql = "SELECT * FROM home_owners WHERE username = ?";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1, username);
+            ResultSet rs = st.executeQuery();
+
+            if (!rs.next()) {
+                return null;
+            }
+
+            String name = rs.getString(1);
+            String email = rs.getString(2);
+            String phoneNumber = rs.getString(3);
+            String type = rs.getString(4);
+            String profilePhoto = rs.getString(5);
+            String password =rs.getString(6);
+            String criminalRecord = rs.getString(7);
+            String identity_card = rs.getString(8);
+
+            return new Volunteer(name,
+                                email,
+                                phoneNumber,
+                                type,
+                                profilePhoto,
+                                criminalRecord,
+                                password,
+                                identity_card);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
