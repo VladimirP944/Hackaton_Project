@@ -25,59 +25,6 @@ public class DatabaseManager {
         locationDao = new LocationDaoJdbc();
     }
 
-//    DisplacedPerson --------------------
-
-    public void saveDisplacedPerson(DisplacedPerson displacedPerson) {
-        displacedPersonDao.add(displacedPerson);
-    }
-
-    public DisplacedPerson loadDisplacedPerson(String username) {
-        return displacedPersonDao.getDisplacedPerson(username);
-    }
-
-    public void updateDisplacedPerson(DisplacedPerson displacedPerson) {
-        displacedPersonDao.update(displacedPerson);
-    }
-
-    public void deleteDisplacedPerson(int id) {
-        displacedPersonDao.delete(id);
-    }
-
-//    Volunteer ---------------------------
-
-    public void saveVolunteer(Volunteer volunteer) {
-        volunteerDao.add(volunteer);
-    }
-
-    public Volunteer loadVolunteer(String username) {
-        return volunteerDao.getVolunteer(username);
-    }
-
-    public void updateVolunteer(Volunteer volunteer) {
-        volunteerDao.update(volunteer);
-    }
-
-    public void deleteVolunteer(int id) {
-        volunteerDao.delete(id);
-    }
-
-    //    Location ---------------------------
-
-    public void saveLocation(Location location) {
-        locationDao.add(location);
-    }
-
-    public <T> Location loadLocation(T criteria) {
-        return locationDao.getLocation(criteria);
-    }
-
-    public void updateLocation(Location location) {
-        locationDao.update(location);
-    }
-
-    public void deleteLocation(int id) {
-        locationDao.delete(id);
-    }
 
     private DataSource connect() throws SQLException {
         PGSimpleDataSource dataSource = new PGSimpleDataSource();
