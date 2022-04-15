@@ -26,11 +26,14 @@ CREATE TABLE applicants (
 
 CREATE TABLE home_owners (
      id serial NOT NULL,
-     username VARCHAR UNIQUE NOT NULL,
-     password VARCHAR NOT NULL,
-     photo_id VARCHAR NOT NULL,
-     photo_criminal_record VARCHAR NOT NULL,
      name VARCHAR NOT NULL,
+     username VARCHAR UNIQUE NOT NULL,
+     phone_number VARCHAR,
+     type VARCHAR NOT NULL,
+     photo_id VARCHAR NOT NULL,
+     password VARCHAR NOT NULL,
+     photo_criminal_record VARCHAR NOT NULL,
+     identity_card VARCHAR,
      PRIMARY KEY (id)
 );
 
