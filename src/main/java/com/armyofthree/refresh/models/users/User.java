@@ -9,4 +9,5 @@ public abstract class User {
     private String phone;
     private UUID id;
     private UserType type;
+    private String profilePhoto;
 }

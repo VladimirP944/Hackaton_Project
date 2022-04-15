@@ -1,5 +1,6 @@
 package com.armyofthree.refresh.models.services;
 
+import java.util.List;
 import java.util.UUID;
 
 public abstract class Service {
@@ -8,4 +9,5 @@ public abstract class Service {
     private ServiceType type;
     private UUID id;
     private String description;
+    private List<String> photos;
 }
