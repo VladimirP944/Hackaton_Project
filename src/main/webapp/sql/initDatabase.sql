@@ -15,9 +15,10 @@ CREATE TABLE applicants (
     photo_id VARCHAR,
     name VARCHAR NOT NULL,
     extra_persons INTEGER DEFAULT 0 NOT NULL,
+    phone_number VARCHAR,
+    type VARCHAR NOT NULL,
+    documents VARCHAR,
     applied_for_home boolean DEFAULT false NOT NULL,
-    start_date DATE NOT NULL,
-    end_date DATE NOT NULL,
     PRIMARY KEY (id)
 );
 
