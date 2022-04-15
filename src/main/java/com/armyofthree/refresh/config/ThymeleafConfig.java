@@ -11,7 +11,7 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 @WebListener
-public class ThymeleafConfig implements ServletContextListener {
+public class  ThymeleafConfig implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
