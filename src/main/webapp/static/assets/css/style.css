@@ -1340,33 +1340,33 @@ section {
   color: #009961;
 }
 
-input[type=email], input[type=password] {
-  width: 100%;
+#username, input[type=password] {
+  width: 50%;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 8px 0%;
   display: inline-block;
   border: 1px solid white;
-  border-radius: 4px;
-  background-color: rgb(33,37,41);
+  border-radius: 40px;
+  background-color: springgreen;
   box-sizing: border-box;
-  color: white;
+  color: black;
 }
 
 
 #button-form {
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 10%;
 }
 
 #button-form:hover {
   opacity: 0.8;
 }
 
-span.password {
-  float: right;
-  padding-top: 16px;
-}
+/*span.password {*/
+/*  float: right;*/
+/*  padding-top: 16px;*/
+/*}*/
 
 .modal {
   display: none;
@@ -1377,16 +1377,21 @@ span.password {
   overflow: auto;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
+  opacity: 0.98;
+}
+
+#modal-container {
+  background-color: lightgray;
 }
 
 .modal-content {
-
   background-color: rgb(33,37,41);
   margin: 5% auto 15% auto;
   border: 3px solid rgb(70,195,249);
   width: 35%;
   top: 20%;
-  color: white
+  max-width: 600px;
+  color: black;
 }
 
 .animate {
@@ -1400,5 +1405,10 @@ span.password {
 }
 
 @keyframes animatezoom {
-  from {transform: scale(0)}
-  to {transform: scale(1)}
+  from {
+    transform: scale(0)
+  }
+  to {
+    transform: scale(1)
+  }
+}

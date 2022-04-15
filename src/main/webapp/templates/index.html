@@ -87,9 +87,7 @@
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
-          <a href="#about" class="get-started-btn scrollto">Get Help</a>
-          <a href="#about" class="get-started-btn scrollto">Offer Help</a>
-          <a href="#" class="btn btn-success" id="loginButton" onclick="document.getElementById('id01').style.display='block'">Login</a>
+          <a href="#connect" class="get-started-btn scrollto">Connect with us</a>
         </div>
       </div>
     </div>
@@ -100,31 +98,85 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-xl-8">
-          <h1>KnightOne - Create Bootstrap Website Template</h1>
-          <h2>We are team of designers making websites with Bootstrap</h2>
-          <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
+          <h1>HomeApp</h1>
+          <h1>Practical help for refugees</h1>
+          <h2>We offer emergency help, one-to-one support and casework, special services for children and families, and help reuniting families.</h2>
+          <a href="https://www.youtube.com/watch?v=QCOKXvcuJ7Y" class="glightbox play-btn mb-4"></a>
         </div>
       </div>
     </div>
             <div id="id01" class="modal">
             <form class="modal-content animate" action="{{ url_for('check_user_credentials') }}" method="POST">
-                <div class="container">
-                    <label for="username"><b>Username</b></label>
+                <div class="container" id="modal-container">
+                    <label for="username"><b></b></label>
                     <input type="email" placeholder="Enter Username" name="username" id='username' required>
-
-                    <label for="password"><b>Password</b></label>
+                    <br>
+                    <label for="password"><b></b></label>
                     <input type="password" placeholder="Enter Password" name="password" id='password' required>
-
+                    <br>
+                  <br>
                     <button class="btn btn-outline-success" type="submit">Login</button>
-                </div>
-                <div><br>
-                    <p style="padding-left: 28%">Don't have an account? <a onclick="document.getElementById('id02').style.display='block'" class="stats-text2">Sign UP!</a></p>
+                   <br>
+                  <br>
+                  <p>Don't have an account? <a href="" onclick="document.getElementById('id02').style.display='block'">Sign UP!</a></p>
                 </div>
             </form>
         </div>
   </section><!-- End Hero -->
 
   <main id="main">
+    <!-- ======= Connect Section ======= -->
+    <section id="connect" class="pricing">
+      <div class="container">
+        <div class="section-title">
+          <h2>Connect</h2>
+          <p>If you are a refugee or asylum seeker who needs help, or someone who works with refugees and people seeking asylum, our teams will speak to you and help you figure out what you need.</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="box">
+              <h3>Have an account!?</h3>
+              <ul>
+                <li>For refugees.</li>
+                <li>For helpers.</li>
+                <li>For NGO.</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#connect" class="btn-buy" id="loginButton" onclick="document.getElementById('id01').style.display='block'">Login</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+            <div class="box recommended">
+              <span class="recommended-badge">Recommended</span>
+              <h3>Get Involved</h3>
+              <ul>
+                <li>Rebuild lives.</li>
+                <li>Give shelter to families.</li>
+                <li>All help is needed.</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Register as helper</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+            <div class="box">
+              <h3>Get Help</h3>
+              <ul>
+                <li>Need shelter?</li>
+                <li>Are you an asylum-seeker?</li>
+                <li>Want other help?</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Register as refugee</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Pricing Section -->
+
 
     <!-- ======= About Us Section ======= -->
     <section id="about" class="about">
@@ -183,49 +235,49 @@
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="icon-box">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4><a href="">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <div class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAARJJREFUSEvllVERwjAQRLcOQAIKAAWAEsABDgAHOAAngANQgARwALOdHBOSSy9pp1/cT2eSdN9dZret0HNVPeujBDAAcHYNLQC8cprLBYj4xIneAGRBcgEnAMugY66trSlyAJq46JoQC7ADsDW63APgObWaACsAR+sK3D6vitNElQKUiIuoCtEAdArtSOeUFG1LZ9Fh3woBbcVFMIL4AHb8UDq/A5i7YG2c0sGduwAYB2MSMpIg+gCOFh7muxybQloRLOn296k15UIOYNjwWeDUT4XMqevUp1z09l5q8nmYk0gvB0CWZkHNyq0BISSVk04AgfCZSnhngBW8PwIwWDPrPoL9q0v8z7L1PyhkxMd7B3wAWAM0GfafD6AAAAAASUVORK5CYII="/></div>
+              <h4><a href="">Shelter</a></h4>
+              <p>We provide shelter to those who need it most.</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="">Sed ut perspiciatis</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+              <div class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAFRJREFUSEtjZKAxYKSx+QzEWvAfh0MI6ieoAGrwqAUEo3o0iMBBhCsYCIYfviSMnExHLUAPKXDoDK8gwpdaRjMawbw0GkQDH0QEXYBLAbF1MtkWAAC++BQZuFCLQQAAAABJRU5ErkJggg=="/></div>
+              <h4><a href="">Health</a></h4>
+              <p>We strive to ensure that all people forced to flee have access to life-saving healthcare.</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4><a href="">Magni Dolores</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+              <div class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQ5JREFUSEvd1dE1BUEMxvHf7UAH6IAK6IAWVIAKUAEq0AIdUAEdcDvQASeO2bN3d/ZsxrEe5CUPm+Q/+TLZWVnYVgvX938Bh7hA+Iw94grhN6wm0RZeEb7F3rGL8J3VADc4xQOOk4R7HOEWZ3OAN2xjHy9JwB6eEbnRxWQHJXCNnWTxElY92FCiIs+o1QSsmtsHhN53PxjukB1DPkHMZWPRSouJw86GdLPod/Axm9YW8FW7BjhH6BnX7TpZs5YzCSjQuEWxcBmr5UwCLr/XPnz8LjJWy5kEZApmYkaA37xF3aL2h1y2OHO6uZjuNzPc5P5VbX2Mqrl/DogH4wBPDY9Nkaua2yrDnPaj74sDPgFF/jYZbFXncgAAAABJRU5ErkJggg=="/></i></div>
+              <h4><a href="">Transport</a></h4>
+              <p>We provide all kinds of transport, provided by people or companies.</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-world"></i></div>
-              <h4><a href="">Nemo Enim</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+              <div class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAK5JREFUSEvtldENgzAMRB8TdITSTRiFTgajdJR2g24AckSkUMm6mCofReXX5p59Nrij8dM11kcBBmACeqeQJ3AHHl6hCmACV9Gl5dyOApbtRa8QFZcWKQEV3wGU37X7sJtL2XqN3xFImksJyO3Wiqi8pH0ugGr5UDxi0ee3oGYWnkFzQNSicAd/AGorvrboDVyiKk7+Kx+pcvXsbzpXHBhVg4mP+cqpi6bEZPz3AStCtx8ZT/zJdAAAAABJRU5ErkJggg=="/></div>
+              <h4><a href="">Jobs</a></h4>
+              <p>Connecting refugees, displaced individuals, and asylum seekers with welcoming employers across the world.</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-slideshow"></i></div>
-              <h4><a href="">Dele cardo</a></h4>
-              <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+              <div class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAI5JREFUSEvtldEKgCAMReeXRX/enxVGGzY3dlEsg3qT5jntuirR4CsN5pMl2DulN+YrgtwAd4FG6NZ7gMcFWhit5RjRDiLg/BFFkwt1sBHRokgcIRoRb8+sNS/KM7BesFaBsFEBGlFZd7KnEugIoYeDiq6+f4F8QaOJQe9DU4TCrLpK0ANz96I/lGb59wUHtnstGQxrGRkAAAAASUVORK5CYII="/></div>
+              <h4><a href="">Education</a></h4>
+              <p>More than half of the world’s refugees are under the age of 18. Without access to education, an entire generation's future is at risk.</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-arch"></i></div>
-              <h4><a href="">Divera don</a></h4>
-              <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+              <div class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAYVJREFUSEu1lQ9NA2EMxX9zgANAAaAAcAAKmIOBAnAAKAAUAAoABRsOmILhAPJIe+l9+/4l5JpctuTavva1fTdjYptNnJ8egDlwDBzao5pW9rwAr7UiawBnwC2w1+jyC7gCBLZlJYA7YNFB3xrYNT/FCGhkOYDe5J9G2Q1wbVnvgcuIkAKIlufOypXIadGcHizuPNKVAohPb7mEU6JVgJqZcux7cHSOVZSSOy2l917g0EUEeAQugA9byzSJBhppyYF4kU+A/o/uQLt9YO2dBE5z3ZY6UNyb3chRCvBjUd5VSlnPUe4Am5gnBqUA8osg/waIFGlYbg6c0pK7YKdoWIbckHWNOrYWgN6rqD+uzXxVs0P2IxvtcUJTbrhepPhfmnZl11TBvsdpF7Ub+bbL1a860DoPAlmTilPgPZTcc4hyr0qFHKLYqSIJWM885NMUO08UQUSbFFObIY5LtpVcjq0PjoBa4leVkJ7j0Xbp0SdTUiJTN1pRyXX2S+Zt9gBUWGm/mhzgFzWDVxnlcFgNAAAAAElFTkSuQmCC"/></div>
+              <h4><a href="">Others</a></h4>
+              <p>People are offering different types of help: food, clothes, devices, services.</p>
             </div>
           </div>
 
@@ -241,10 +293,10 @@
         <div class="row">
           <div class="col-lg-9 text-center text-lg-start">
             <h3>Call To Action</h3>
-            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p> Together with our donors, we support operations on the frontlines of conflict to protect refugees and empower them with opportunities.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Call To Action</a>
+            <a class="cta-btn align-middle" href="#" onclick="window.open('tel:900300400');">Call To Action</a>
           </div>
         </div>
 
@@ -496,73 +548,6 @@
       </div>
     </section><!-- End Portfolio Section -->
 
-    <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Pricing</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6">
-            <div class="box">
-              <h3>Free</h3>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
-            <div class="box recommended">
-              <span class="recommended-badge">Recommended</span>
-              <h3>Business</h3>
-              <h4><sup>$</sup>19<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
-            <div class="box">
-              <h3>Developer</h3>
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Pricing Section -->
 
     <!-- ======= Faq Section ======= -->
     <section id="faq" class="faq">
