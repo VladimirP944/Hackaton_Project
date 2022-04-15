@@ -109,17 +109,18 @@
     </div>
             <div id="id01" class="modal">
             <form class="modal-content animate" action="{{ url_for('check_user_credentials') }}" method="POST">
-                <div class="container">
-                    <label for="username"><b>Username</b></label>
+                <div class="container" id="modal-container">
+                    <label for="username"><b></b></label>
                     <input type="email" placeholder="Enter Username" name="username" id='username' required>
-
-                    <label for="password"><b>Password</b></label>
+                    <br>
+                    <label for="password"><b></b></label>
                     <input type="password" placeholder="Enter Password" name="password" id='password' required>
-
+                    <br>
+                  <br>
                     <button class="btn btn-outline-success" type="submit">Login</button>
-                </div>
-                <div><br>
-                    <p style="padding-left: 28%">Don't have an account? <a onclick="document.getElementById('id02').style.display='block'" class="stats-text2">Sign UP!</a></p>
+                   <br>
+                  <br>
+                  <p>Don't have an account? <a href="" onclick="document.getElementById('id02').style.display='block'">Sign UP!</a></p>
                 </div>
             </form>
         </div>
