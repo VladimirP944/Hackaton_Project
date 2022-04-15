@@ -93,7 +93,24 @@ public class DisplacedPersonDaoJdbc implements DisplacedPersonDao {
 
     @Override
     public void add(DisplacedPerson displacedPerson) {
+        try(Connection conn = dataSource.getConnection()) {
+            String sql = "INSERT INTO applicants (username, password, photo_id, name, extra_persons, phone_number, documents, type, applied_for_home) VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement st = conn.prepareStatement(sql);
 
+            st.setString(1, displacedPerson.getUsername());
+            st.setString(2, displacedPerson.getPassword());
+            st.setString(3, displacedPerson.getPhoto());
+            st.setString(4, displacedPerson.getName());
+            st.setBoolean(5, displacedPerson.getExtraPersons());
+            st.setString(6, displacedPerson.getPhoneNumber());
+            st.setString(7, displacedPerson.getDocuments());
+            st.setString(8, displacedPerson.getType());
+            st.setBoolean(9, displacedPerson.getAppliedForHome());
+            st.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
