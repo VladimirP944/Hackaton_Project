@@ -1340,16 +1340,16 @@ section {
   color: #009961;
 }
 
-input[type=email], input[type=password] {
-  width: 100%;
+#username, input[type=password] {
+  width: 50%;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 8px 0%;
   display: inline-block;
   border: 1px solid white;
-  border-radius: 4px;
-  background-color: rgb(33,37,41);
+  border-radius: 40px;
+  background-color: springgreen;
   box-sizing: border-box;
-  color: white;
+  color: black;
 }
 
 
