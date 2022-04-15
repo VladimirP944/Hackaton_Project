@@ -1,6 +1,6 @@
 package com.armyofthree.refresh.dao.implementations.jdbc;
 
-import com.armyofthree.refresh.models.dao.LocationDao;
+import com.armyofthree.refresh.dao.LocationDao;
 import com.armyofthree.refresh.models.services.Location;
 
 import java.util.ArrayList;
