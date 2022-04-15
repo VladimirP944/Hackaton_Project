@@ -92,8 +92,24 @@ public class VolunteerDaoJdbc implements VolunteerDao {
     }
 
     @Override
-    public void add(Volunteer homeOwner) {
+    public void add(Volunteer volunteer) {
+        try(Connection conn = dataSource.getConnection()) {
+            String sql = "INSERT INTO home_owners (name, username, phone_number, type, photo_id, password, photo_criminal_record, identity_card) VALUE (?, ?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement st = conn.prepareStatement(sql);
 
+            st.setString(4, volunteer.getName());
+            st.setString(1, volunteer.getUsername());
+            st.setString(6, volunteer.getPhoneNumber());
+            st.setString(8, volunteer.getType());
+            st.setString(3, volunteer.getPhoto());
+            st.setString(2, volunteer.getPassword());
+            st.setBoolean(5, volunteer.getRecord());
+            st.setString(7, volunteer.getIdentityCard());
+            st.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
