@@ -6,7 +6,11 @@
 */
 (function() {
   "use strict";
-
+addEventListener('click', event => {
+  if (event.target.id === 'id01' || event.target.id === 'id02') {
+    event.target.style.display = 'none'
+  }
+})
   /**
    * Easy selector helper function
    */
