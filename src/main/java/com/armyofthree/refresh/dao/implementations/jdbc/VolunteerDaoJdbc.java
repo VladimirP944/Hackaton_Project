@@ -1,6 +1,6 @@
-package com.armyofthree.refresh.models.dao.implementations.jdbc;
+package com.armyofthree.refresh.dao.implementations.jdbc;
 
-import com.armyofthree.refresh.models.dao.VolunteerDao;
+import com.armyofthree.refresh.dao.VolunteerDao;
 import com.armyofthree.refresh.models.users.Volunteer;
 
 import java.util.ArrayList;

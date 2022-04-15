@@ -1,6 +1,6 @@
-package com.armyofthree.refresh.models.dao.implementations.jdbc;
+package com.armyofthree.refresh.dao.implementations.jdbc;
 
-import com.armyofthree.refresh.models.dao.DisplacedPersonDao;
+import com.armyofthree.refresh.dao.DisplacedPersonDao;
 import com.armyofthree.refresh.models.users.DisplacedPerson;
 
 import java.util.ArrayList;

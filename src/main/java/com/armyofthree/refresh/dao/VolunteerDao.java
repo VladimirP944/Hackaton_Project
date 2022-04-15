@@ -1,4 +1,4 @@
-package com.armyofthree.refresh.models.dao;
+package com.armyofthree.refresh.dao;
 
 import com.armyofthree.refresh.models.users.Volunteer;
 
