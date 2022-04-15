@@ -1,10 +1,11 @@
 ALTER TABLE IF EXISTS ONLY services DROP CONSTRAINT IF EXISTS fk_service_home_owner_iduser_id CASCADE;
 ALTER TABLE IF EXISTS ONLY services DROP CONSTRAINT IF EXISTS fk_applicant_id CASCADE;
+ALTER TABLE IF EXISTS ONLY locations DROP CONSTRAINT IF EXISTS fk_home_owner_id CASCADE;
 
-DROP TABLE IF EXISTS applicants;
-DROP TABLE IF EXISTS home_owners;
 DROP TABLE IF EXISTS locations;
 DROP TABLE IF EXISTS services;
+DROP TABLE IF EXISTS applicants;
+DROP TABLE IF EXISTS home_owners;
 DROP TABLE IF EXISTS admins;
 
 
@@ -36,6 +37,7 @@ CREATE TABLE home_owners (
 
 CREATE TABLE locations (
    id serial NOT NULL,
+   home_owner_id INTEGER NOT NULL,
    address VARCHAR UNIQUE NOT NULL,
    available_space INTEGER NOT NULL,
    total_space INTEGER NOT NULL,
@@ -72,3 +74,6 @@ ALTER TABLE ONLY services
 
 ALTER TABLE ONLY services
     ADD CONSTRAINT fk_applicant_id FOREIGN KEY (applicant_id) REFERENCES applicants(id);
+
+ALTER TABLE ONLY locations
+    ADD CONSTRAINT fk_home_owner_id FOREIGN KEY (home_owner_id) REFERENCES home_owners(id);
