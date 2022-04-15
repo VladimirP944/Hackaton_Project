@@ -11,8 +11,8 @@ public class DisplacedPerson extends User {
     private String documents;
     private boolean pets;
 
-    public DisplacedPerson(String name, String address, String email, String phone, UserType type, String profilePhoto, int numberOfPeople, String documents, String password) {
-        super(name, address, email, phone, UserType.DISPLACED_PERSON, profilePhoto, password);
+    public DisplacedPerson(String name, String email, String phone, String profilePhoto, int numberOfPeople, String documents, String password) {
+        super(name, email, phone, UserType.DISPLACED_PERSON, profilePhoto, password);
         this.numberOfPeople = numberOfPeople;
         this.documents = documents;
     }
