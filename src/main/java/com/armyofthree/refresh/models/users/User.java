@@ -10,4 +10,16 @@ public abstract class User {
     private UUID id;
     private UserType type;
     private String profilePhoto;
+    private String password;
+
+    public User(String name, String address, String email, String phone, UserType type, String profilePhoto, String password) {
+        this.name = name;
+        this.address = address;
+        this.email = email;
+        this.phone = phone;
+        this.type = type;
+        this.profilePhoto = profilePhoto;
+        this.id = UUID.randomUUID();
+        this.password = password;
+    }
 }
