@@ -1,4 +1,4 @@
-package com.armyofthree.refresh.models;
+package com.armyofthree.refresh.models.users;
 
 public enum UserType {
     ADMIN,

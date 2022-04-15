@@ -1,6 +1,6 @@
-package com.armyofthree.refresh.models;
+package com.armyofthree.refresh.models.users;
 
-public class DisplacedPerson {
+public class DisplacedPerson extends User {
     private int numberOfPeople;
     private boolean lookingForJob;
     private boolean lookingForShelter;
