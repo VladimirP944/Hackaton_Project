@@ -13,16 +13,16 @@ def add_user(username, password, image_file):
                                 select=False)
 
 
-def delete_user(user):
+def delete_user(id):
     query = '''
         DELETE FROM locations
-            WHERE home_owner_id = %(user)s;
+            WHERE user_id = %(id)s;
         DELETE FROM services
-            WHERE home_owner_id = %(user)s;
+            WHERE user_id = %(id)s;
         DELETE FROM users
-            WHERE id = %(user)s;
+            WHERE id = %(id)s;
         '''
-    data_manager.execute_select(query, {'user': user}, select=False)
+    data_manager.execute_select(query, {'id': id}, select=False)
 
 
 def check_user_exists(username):
@@ -92,3 +92,13 @@ def delete_location(id):
                 WHERE id = %(id)s;
             '''
     return data_manager.execute_select(query, {'id': id}, fetchall=False)
+
+
+def get_user_type(username):
+    query = '''
+            SELECT type
+            FROM users
+            WHERE username = %(username)s
+            '''
+
+    return data_manager.execute_select(query, {'username': username}, fetchall=False)
