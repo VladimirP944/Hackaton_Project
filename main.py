@@ -27,7 +27,7 @@ def index():
     return render_template("index.html", user=session["username"].split('@')[0].capitalize())
 
 
-@app.route('/register', methods=['GET', 'POST'])
+@app.route('/register-applicant', methods=['GET', 'POST'])
 def register_user():
     if request.method == 'POST':
         username = request.form.get('username')
@@ -35,13 +35,18 @@ def register_user():
         if not (queries.check_user_exists(username)['exists']):
             password = request.form.get('password')
             hashed_password = generate_password_hash(password)
-            print(request.files["file"])
+            name = request.form.get("fname") + " " + request.form.get("Lname")
+            extra_persons = request.form.get("extra_persons")
+            phone_number = request.form.get("phone_number")
+            type = session["type"] if session["type"] else "None"
+            documents = request.files["documents"] if request.files["documents"] else "None"
+            identity_card = request.form.get("identity_card")
+
             if request.files["file"]:
-                image_file = upload_picture(UPLOAD_FOLDER, request.files["file"])
+                photo_id = upload_picture(UPLOAD_FOLDER, request.files["file"])
             else:
-                image_file = 'avatar.jpg'
-                # type = TODO
-            queries.add_user(username, hashed_password, image_file)
+                photo_id = 'avatar.jpg'
+            queries.add_user(username, hashed_password, photo_id, name, extra_persons, phone_number, type, documents, identity_card)
             return redirect(url_for("index"))
         flash('User already exists')
 
