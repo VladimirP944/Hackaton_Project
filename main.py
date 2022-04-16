@@ -39,11 +39,11 @@ def register_user():
             extra_persons = request.form.get("extra_persons")
             phone_number = request.form.get("phone_number")
             type = session["type"] if session["type"] else "None"
-            documents = request.files["documents"] if request.files["documents"] else "None"
+            documents = request.files["criminalRecordPhoto"] if request.files["criminalRecordPhoto"] else "None"
             identity_card = request.form.get("identity_card")
 
-            if request.files["file"]:
-                photo_id = upload_picture(UPLOAD_FOLDER, request.files["file"])
+            if request.files["profile_photo"]:
+                photo_id = upload_picture(UPLOAD_FOLDER, request.files["profile_photo"])
             else:
                 photo_id = 'avatar.jpg'
             queries.add_user(username, hashed_password, photo_id, name, extra_persons, phone_number, type, documents, identity_card)
@@ -114,6 +114,22 @@ def delete_location():
     flash('Location Deleted')
     return redirect(url_for("index"))
 
+
+@app.route('/add-location')
+def add_location():
+    if request.method == 'POST':
+        name = request.form.get("name")
+        user_id = queries.get_user_id(session['username'])['id']
+        address = request.form.get("address")
+        available_space = request.form.get("space")
+        total_space = request.form.get("space")
+
+        if request.files["photo"]:
+            photo_id = upload_picture(UPLOAD_FOLDER, request.files["photo"])
+        else:
+            photo_id = 'None'
+
+        queries.add_location(name, user_id, address, available_space, total_space, photo_id)
 
 def main():
     app.run(debug=True)
