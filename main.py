@@ -84,7 +84,7 @@ def check_user_credentials():
                 session['username'] = username
                 session['type'] = (queries.get_user_type(username))['type']
                 session['user_id'] = (queries.get_user_id(username))['id']
-                return redirect(url_for('index'))
+                return redirect(url_for('get_volunteer_page', user_type=session["type"], name=session["username"]))
             else:
                 flash('Wrong password/user')
         else:
@@ -115,7 +115,7 @@ def delete_location():
     return redirect(url_for("index"))
 
 
-@app.route('/add-location')
+@app.route('/add-location', methods=['GET', 'POST'])
 def add_location():
     if request.method == 'POST':
         name = request.form.get("name")
@@ -131,7 +131,7 @@ def add_location():
             photo_id = 'None'
 
         queries.add_location(name, description, user_id, address, available_space, total_space, photo_id)
-        return redirect("get_all_locations")
+        return redirect(url_for('get_volunteer_page'))
     else:
         return redirect("index")
 
