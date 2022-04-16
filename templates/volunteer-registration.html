@@ -97,7 +97,7 @@
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <div class="signup-form">
-                <form action="" class="mt-5 border p-4 bg-light shadow">
+                <form action="{{ url_for('register_user') }}" class="mt-5 border p-4 bg-light shadow" method="POST" enctype="multipart/form-data">
                     <h4 class="mb-5 text-secondary">Create Your Volunteer Account</h4>
                     <div class="row">
                         <div class="mb-3 col-md-6">
@@ -145,7 +145,7 @@
                             <input type="pass" name="confirmpassword" class="form-control" placeholder="Confirm Password">
                         </div>
                         <div class="col-md-12">
-                           <button class="btn btn-success float-end">Signup Now</button>
+                           <button class="btn btn-success float-end" type="submit">Signup Now</button>
                         </div>
                     </div>
                 </form>

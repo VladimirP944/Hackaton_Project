@@ -28,10 +28,10 @@ def welcome_user():
 
 
 @app.route('/register', methods=['GET', 'POST'])
-def register_home_owner():
+def register_user():
     if request.method == 'POST':
         username = request.form.get('username')
-
+        print(request.form.get('username'))
         if not (queries.check_user_exists(username)['exists']):
             password = request.form.get('password')
             hashed_password = generate_password_hash(password)
