@@ -82,6 +82,30 @@ def delete_user():
     return redirect(url_for("index"))
 
 
+@app.route('/delete_applicant')
+def delete_user():
+    queries.delete_applicant(queries.get_applicant_id(session['username'])['id'])
+    remove_picture(session['profile_picture'])
+    session.clear()
+    flash('Account Deleted')
+    return redirect(url_for("index"))
+
+
+@app.route('/delete_location')
+def delete_user():
+    # TODO get address
+    # queries.delete_location(queries.get_location_id(address))
+    flash('Location Deleted')
+    return redirect(url_for("index"))
+
+
+@app.route('/delete_applicant_location')
+def delete_user():
+    queries.delete_applicant_location(queries.get_applicant_id(session['username'])['id'])
+    flash('Home Deleted')
+    return redirect(url_for("index"))
+
+
 @app.route("/api/check-if-user-logged-in")
 @json_response
 def check_logged_in():
