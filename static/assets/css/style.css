@@ -1352,7 +1352,7 @@ section {
   color: #009961;
 }
 
-#username, input[type=password] {
+#username, #password1 {
   width: 50%;
   padding: 12px 20px;
   margin: 8px 0%;
