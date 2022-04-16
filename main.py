@@ -56,6 +56,7 @@ def register_user():
 @app.route("/applicant-registration", methods=['GET', 'POST'])
 def register_applicant():
     if request.method == 'GET':
+        session["type"] = "applicant"
         return render_template("applicant-registration.html")
     else:
         return redirect(url_for("index"))
@@ -64,6 +65,7 @@ def register_applicant():
 @app.route("/volunteer-registration", methods=['GET', 'POST'])
 def register_volunteer():
     if request.method == 'GET':
+        session["type"] = "volunteer"
         return render_template("volunteer-registration.html")
     else:
         return redirect(url_for("index"))
