@@ -16,9 +16,9 @@ CREATE TABLE users (
     phone_number VARCHAR,
     type VARCHAR,
     documents VARCHAR,
+    identity_card VARCHAR,
     applied_for_home boolean DEFAULT false NOT NULL,
     home_id INTEGER,
-    identity_card VARCHAR,
     PRIMARY KEY (id)
 );
 
