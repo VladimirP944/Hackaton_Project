@@ -48,6 +48,22 @@ def register_home_owner():
     return redirect(url_for("register"))
 
 
+@app.route("/applicant-registration", methods=['GET', 'POST'])
+def register_applicant():
+    if request.method == 'GET':
+        return render_template("applicant-registration.html")
+    else:
+        return redirect(url_for("welcome_user"))
+
+
+@app.route("/volunteer-registration", methods=['GET', 'POST'])
+def register_volunteer():
+    if request.method == 'GET':
+        return render_template("volunteer-registration.html")
+    else:
+        return redirect(url_for("welcome_user"))
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def check_user_credentials():
     if request.method == 'POST':
