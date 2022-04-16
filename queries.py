@@ -11,12 +11,28 @@ def add_user(username, password):
                                 select=False)
 
 
-def delete_user(user_id):
+def delete_home_owner(home_owner_id):
     query = '''
-        DELETE FROM users
-        WHERE id = %(user_id)s;
+        DELETE FROM locations
+            WHERE home_owner_id = %(home_owner_id)s;
+        DELETE FROM services
+            WHERE home_owner_id = %(home_owner_id)s;
+        DELETE FROM home_owners
+            WHERE id = %(home_owner_id)s;
         '''
-    data_manager.execute_select(query, {'user_id': user_id}, select=False)
+    data_manager.execute_select(query, {'home_owner_id': home_owner_id}, select=False)
+
+
+def delete_applicant(applicant_id):
+    query = '''
+        DELETE FROM locations
+            WHERE home_owner_id = %(applicant_id)s;
+        DELETE FROM services
+            WHERE home_owner_id = %(applicant_id)s;
+        DELETE FROM home_owners
+            WHERE id = %(applicant_id)s;
+        '''
+    data_manager.execute_select(query, {'applicant_id': applicant_id}, select=False)
 
 
 def check_if_user_exists(username):
@@ -30,16 +46,6 @@ def check_if_user_exists(username):
     return data_manager.execute_select(query, {"username": username}, fetchall=False)
 
 
-def get_user_id(username):
-    query = '''
-        SELECT id
-        FROM users
-        WHERE username = %(username)s
-        '''
-
-    return data_manager.execute_select(query, {'username': username}, fetchall=False)
-
-
 def get_user_password(username):
     query = """
         SELECT password
@@ -49,3 +55,48 @@ def get_user_password(username):
 
     return data_manager.execute_select(query, {"username": username}, fetchall=False)
 
+
+def get_home_owner_id(email):
+    query = '''
+            SELECT id
+            FROM home_owners
+            WHERE username = %(email)s
+            '''
+
+    return data_manager.execute_select(query, {'email': email}, fetchall=False)
+
+
+def get_applicant_id(email):
+    query = '''
+            SELECT id
+            FROM users
+            WHERE username = %(email)s
+            '''
+
+    return data_manager.execute_select(query, {'email': email}, fetchall=False)
+
+
+def get_location_id(address):
+    query = '''
+            SELECT id
+            FROM users
+            WHERE address = %(address)s
+            '''
+
+    return data_manager.execute_select(query, {'address': address}, fetchall=False)
+
+
+def delete_location(id):
+    query = '''
+            DELETE FROM locations
+                WHERE id = %(id)s;
+            '''
+    return data_manager.execute_select(query, {'id': id}, fetchall=False)
+
+
+def delete_applicant_location(email):
+    query = '''
+            DELETE FROM applicants
+                WHERE home_id = %(email)s;
+            '''
+    return data_manager.execute_select(query, {'email': email}, fetchall=False)
