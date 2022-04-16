@@ -35,7 +35,12 @@ def register_user():
         if not (queries.check_if_user_exists(username)['exists']):
             password = request.form.get('password')
             hashed_password = generate_password_hash(password)
-            queries.add_user(username, hashed_password)
+            print(request.files["file"])
+            if request.files["file"]:
+                image_file = upload_picture(UPLOAD_FOLDER, request.files["file"])
+            else:
+                image_file = 'avatar.jpg'
+            queries.add_user(username, hashed_password, image_file)
             return redirect(url_for("register"))
         flash('User already exists')
 
