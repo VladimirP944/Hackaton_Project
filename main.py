@@ -19,8 +19,8 @@ load_dotenv()
 @app.route("/", methods=['GET', 'POST'])
 def welcome_user():
     if "username" not in session:
-        return render_template("welcome.html")
-    return render_template("welcome.html", user=session["username"].split('@')[0].capitalize())
+        return render_template("index.html")
+    return render_template("index.html", user=session["username"].split('@')[0].capitalize())
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -32,10 +32,10 @@ def register_user():
             password = request.form.get('password')
             hashed_password = generate_password_hash(password)
             queries.add_user(username, hashed_password)
-            return redirect(url_for("welcome_user"))
+            return redirect(url_for("register"))
         flash('User already exists')
 
-    return redirect(url_for("welcome_user"))
+    return redirect(url_for("register"))
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -50,18 +50,18 @@ def check_user_credentials():
             if check_password_hash(hashed_password, password):
                 session['username'] = username
                 session['user_id'] = (queries.get_user_id(username))['id']
-                return redirect(url_for('welcome_user'))
+                return redirect(url_for('index'))
             else:
                 flash('Wrong password')
         else:
             flash('User does not exist')
-    return redirect(url_for("welcome_user"))
+    return redirect(url_for("index"))
 
 
 @app.route("/logout")
 def logout():
     session.clear()
-    return redirect(url_for("welcome_user"))
+    return redirect(url_for("index"))
 
 
 @app.route('/delete_user')
@@ -69,7 +69,7 @@ def delete_user():
     queries.delete_user(queries.get_user_id(session['username'])['id'])
     session.clear()
     flash('Account Deleted')
-    return redirect(url_for("welcome_user"))
+    return redirect(url_for("index"))
 
 
 @app.route("/api/check-if-user-logged-in")
@@ -85,7 +85,7 @@ def main():
 
     # Serving the favicon
     with app.app_context():
-        app.add_url_rule('/favicon.ico', redirect_to=url_for('static', filename='favicon/favicon.ico'))
+        app.add_url_rule('/favicon.ico', redirect_to=url_for('static', filename='assets/favicon/favicon.png'))
 
 
 if __name__ == '__main__':
