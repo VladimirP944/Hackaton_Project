@@ -130,6 +130,10 @@ def add_location():
             photo_id = 'None'
 
         queries.add_location(name, user_id, address, available_space, total_space, photo_id)
+        return redirect("get_volunteer_page")
+    else:
+        return redirect("index")
+
 
 def main():
     app.run(debug=True)
