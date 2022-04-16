@@ -1,10 +1,10 @@
 import data_manager
 
 
-def add_user(username, password, photo_id, name, extra_persons, phone_number, type, documents, identity_card):
+def add_user(username, password, photo_id, name, extra_persons, phone_number, type, identity_card):
     query = """
         INSERT INTO users VALUES
-            (DEFAULT, %(username)s, %(password)s, %(photo_id)s, %(name)s, %(extra_persons)s, %(phone_number)s, %(type)s, %(documents)s, %(identity_card)s)
+            (DEFAULT, %(username)s, %(password)s, %(photo_id)s, %(name)s, %(extra_persons)s, %(phone_number)s, %(type)s, %(identity_card)s)
         """
     data_manager.execute_select(query, {"username": username,
                                         "password": password,
@@ -13,7 +13,6 @@ def add_user(username, password, photo_id, name, extra_persons, phone_number, ty
                                         "extra_persons": extra_persons,
                                         "phone_number": phone_number,
                                         "type": type,
-                                        "documents": documents,
                                         "identity_card": identity_card
                                         },
                                 select=False)

@@ -39,14 +39,13 @@ def register_user():
             extra_persons = request.form.get("extra_persons")
             phone_number = request.form.get("phone_number")
             type = session["type"] if session["type"] else "None"
-            documents = request.files["criminalRecordPhoto"] if request.files["criminalRecordPhoto"] else "None"
             identity_card = request.form.get("identity_card")
 
             if request.files["profile_photo"]:
                 photo_id = upload_picture(UPLOAD_FOLDER, request.files["profile_photo"])
             else:
                 photo_id = 'avatar.jpg'
-            queries.add_user(username, hashed_password, photo_id, name, extra_persons, phone_number, type, documents, identity_card)
+            queries.add_user(username, hashed_password, photo_id, name, extra_persons, phone_number, type, identity_card)
             return redirect(url_for("index"))
         flash('User already exists')
 
@@ -84,7 +83,9 @@ def check_user_credentials():
                 session['username'] = username
                 session['type'] = (queries.get_user_type(username))['type']
                 session['user_id'] = (queries.get_user_id(username))['id']
-                return redirect(url_for('get_volunteer_page', user_type=session["type"], name=session["username"]))
+                if session["type"] == "volunteer":
+                    return redirect(url_for('get_volunteer_page'))
+                return redirect(url_for('get_refugee_page'))
             else:
                 flash('Wrong password/user')
         else:
@@ -194,7 +195,7 @@ def register_education():
 @app.route("/volunteer-page", methods=['GET', 'POST'])
 def get_volunteer_page():
     if request.method == 'GET':
-        return render_template("volunteers-page.html")
+        return render_template("volunteers-page.html", user_type=session["type"], name=session["username"])
     else:
         return redirect(url_for("index"))
 
@@ -202,7 +203,7 @@ def get_volunteer_page():
 @app.route("/refugee-page", methods=['GET', 'POST'])
 def get_refugee_page():
     if request.method == 'GET':
-        return render_template("refugees-page.html")
+        return render_template("refugees-page.html", user_type=session["type"], name=session["username"])
     else:
         return redirect(url_for("index"))
 
