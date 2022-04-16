@@ -119,6 +119,7 @@ def delete_location():
 def add_location():
     if request.method == 'POST':
         name = request.form.get("name")
+        description = request.form.get("description")
         user_id = queries.get_user_id(session['username'])['id']
         address = request.form.get("address")
         available_space = request.form.get("space")
@@ -129,8 +130,8 @@ def add_location():
         else:
             photo_id = 'None'
 
-        queries.add_location(name, user_id, address, available_space, total_space, photo_id)
-        return redirect("get_volunteer_page")
+        queries.add_location(name, description, user_id, address, available_space, total_space, photo_id)
+        return redirect("get_all_locations")
     else:
         return redirect("index")
 
