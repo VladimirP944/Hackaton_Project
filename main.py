@@ -73,9 +73,10 @@ def logout():
     return redirect(url_for("index"))
 
 
-@app.route('/delete_user')
+@app.route('/delete_home_owner')
 def delete_user():
-    queries.delete_user(queries.get_user_id(session['username'])['id'])
+    queries.delete_home_owner(queries.get_home_owner_id(session['username'])['id'])
+    remove_picture(session['profile_picture'])
     session.clear()
     flash('Account Deleted')
     return redirect(url_for("index"))
