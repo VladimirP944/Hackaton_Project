@@ -136,6 +136,13 @@ def add_location():
         return redirect("index")
 
 
+@app.route("/all-locations")
+def get_all_locations():
+    locations = queries.get_all_locations()
+    print(locations)
+    return render_template("refugees-page.html", locations=locations)
+
+
 @app.route("/location-registration", methods=['GET', 'POST'])
 def register_location():
     if request.method == 'GET':
