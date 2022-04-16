@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from werkzeug.security import generate_password_hash
 from werkzeug.security import check_password_hash
 
-from util import json_response, upload_picture, remove_picture
+from util import json_response
 import mimetypes
 import queries
 
