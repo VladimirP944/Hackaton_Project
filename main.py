@@ -203,7 +203,7 @@ def get_volunteer_page():
 @app.route("/refugee-page", methods=['GET', 'POST'])
 def get_refugee_page():
     if request.method == 'GET':
-        return render_template("refugees-page.html", user_type=session["type"], name=session["username"])
+        return render_template("refugees-page.html", user_type=session["type"], name=session["username"], locations=get_all_locations())
     else:
         return redirect(url_for("index"))
 
