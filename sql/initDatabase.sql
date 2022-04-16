@@ -25,13 +25,14 @@ CREATE TABLE users (
 
 CREATE TABLE locations (
    id serial NOT NULL,
+   name VARCHAR,
    user_id INTEGER NOT NULL,
    address VARCHAR UNIQUE NOT NULL,
    available_space INTEGER NOT NULL,
    total_space INTEGER NOT NULL,
+   photo VARCHAR,
    start_date DATE DEFAULT NOW() NOT NULL,
    end_date DATE NOT NULL,
-   photos VARCHAR NOT NULL,
    PRIMARY KEY (id)
 );
 
