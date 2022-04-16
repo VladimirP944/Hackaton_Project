@@ -104,6 +104,18 @@
         </div>
 
         <div class="row portfolio-container">
+          {% for location in locations %}
+            <div class="col-lg-4 col-md-6 portfolio-item filter-accommodation">
+              <img src="../static/assets/img/portfolio/{{ location['photo'] }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>{{ location['name'] }}</h4>
+                <p>{{ location['description'] }}</p>
+                <a href="../static/assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          {% endfor %}
+
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-accommodation">
             <img src="../static/assets/img/portfolio/apartment2.jpg" class="img-fluid" alt="">
