@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from werkzeug.security import generate_password_hash
 from werkzeug.security import check_password_hash
 
-from util import json_response
+from util import json_response, upload_picture, remove_picture
 import mimetypes
 import queries
 
@@ -28,11 +28,11 @@ def welcome_user():
 
 
 @app.route('/register', methods=['GET', 'POST'])
-def register_user():
+def register_home_owner():
     if request.method == 'POST':
         username = request.form.get('username')
 
-        if not (queries.check_if_user_exists(username)['exists']):
+        if not (queries.check_user_exists(username)['exists']):
             password = request.form.get('password')
             hashed_password = generate_password_hash(password)
             print(request.files["file"])
@@ -40,8 +40,9 @@ def register_user():
                 image_file = upload_picture(UPLOAD_FOLDER, request.files["file"])
             else:
                 image_file = 'avatar.jpg'
+                # type = TODO
             queries.add_user(username, hashed_password, image_file)
-            return redirect(url_for("register"))
+            return redirect(url_for("index"))
         flash('User already exists')
 
     return redirect(url_for("register"))
@@ -53,18 +54,19 @@ def check_user_credentials():
         username = request.form.get('username')
         password = request.form.get('password')
 
-        if bool(queries.check_if_user_exists(username)['exists']):
+        if bool(queries.check_user_exists(username)['exists']):
 
             hashed_password = queries.get_user_password(username)["password"]
             if check_password_hash(hashed_password, password):
                 session['username'] = username
+                session['type'] = (queries.get_user_type(username))['type']
                 session['user_id'] = (queries.get_user_id(username))['id']
                 return redirect(url_for('index'))
             else:
                 flash('Wrong password')
         else:
             flash('User does not exist')
-    return redirect(url_for("index"))
+    return redirect(url_for("index", user_type=session['type']))
 
 
 @app.route("/logout")
@@ -73,18 +75,9 @@ def logout():
     return redirect(url_for("index"))
 
 
-@app.route('/delete_home_owner')
+@app.route('/delete_user')
 def delete_user():
-    queries.delete_home_owner(queries.get_home_owner_id(session['username'])['id'])
-    remove_picture(session['profile_picture'])
-    session.clear()
-    flash('Account Deleted')
-    return redirect(url_for("index"))
-
-
-@app.route('/delete_applicant')
-def delete_user():
-    queries.delete_applicant(queries.get_applicant_id(session['username'])['id'])
+    queries.delete_user(queries.get_user_id(session['username'])['id'])
     remove_picture(session['profile_picture'])
     session.clear()
     flash('Account Deleted')
@@ -97,21 +90,6 @@ def delete_user():
     # queries.delete_location(queries.get_location_id(address))
     flash('Location Deleted')
     return redirect(url_for("index"))
-
-
-@app.route('/delete_applicant_location')
-def delete_user():
-    queries.delete_applicant_location(queries.get_applicant_id(session['username'])['id'])
-    flash('Home Deleted')
-    return redirect(url_for("index"))
-
-
-@app.route("/api/check-if-user-logged-in")
-@json_response
-def check_logged_in():
-    if 'username' in session:
-        return {"response": True}
-    return {"response": False}
 
 
 def main():
