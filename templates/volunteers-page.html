@@ -94,7 +94,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="icon-box">
               <div class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAARJJREFUSEvllVERwjAQRLcOQAIKAAWAEsABDgAHOAAngANQgARwALOdHBOSSy9pp1/cT2eSdN9dZret0HNVPeujBDAAcHYNLQC8cprLBYj4xIneAGRBcgEnAMugY66trSlyAJq46JoQC7ADsDW63APgObWaACsAR+sK3D6vitNElQKUiIuoCtEAdArtSOeUFG1LZ9Fh3woBbcVFMIL4AHb8UDq/A5i7YG2c0sGduwAYB2MSMpIg+gCOFh7muxybQloRLOn296k15UIOYNjwWeDUT4XMqevUp1z09l5q8nmYk0gvB0CWZkHNyq0BISSVk04AgfCZSnhngBW8PwIwWDPrPoL9q0v8z7L1PyhkxMd7B3wAWAM0GfafD6AAAAAASUVORK5CYII="/></div>
-              <h4><a href="">Shelter</a></h4>
+              <h4><a href="{{ url_for('register_location') }}">Shelter</a></h4>
               <p>We provide shelter to those who need it most.</p>
             </div>
           </div>
@@ -102,7 +102,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div class="icon-box">
               <div class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAFRJREFUSEtjZKAxYKSx+QzEWvAfh0MI6ieoAGrwqAUEo3o0iMBBhCsYCIYfviSMnExHLUAPKXDoDK8gwpdaRjMawbw0GkQDH0QEXYBLAbF1MtkWAAC++BQZuFCLQQAAAABJRU5ErkJggg=="/></div>
-              <h4><a href="">Health</a></h4>
+              <h4><a href="{{ url_for('register_medical') }}">Health</a></h4>
               <p>We strive to ensure that all people forced to flee have access to life-saving healthcare.</p>
             </div>
           </div>
@@ -110,7 +110,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="icon-box">
               <div class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQ5JREFUSEvd1dE1BUEMxvHf7UAH6IAK6IAWVIAKUAEq0AIdUAEdcDvQASeO2bN3d/ZsxrEe5CUPm+Q/+TLZWVnYVgvX938Bh7hA+Iw94grhN6wm0RZeEb7F3rGL8J3VADc4xQOOk4R7HOEWZ3OAN2xjHy9JwB6eEbnRxWQHJXCNnWTxElY92FCiIs+o1QSsmtsHhN53PxjukB1DPkHMZWPRSouJw86GdLPod/Axm9YW8FW7BjhH6BnX7TpZs5YzCSjQuEWxcBmr5UwCLr/XPnz8LjJWy5kEZApmYkaA37xF3aL2h1y2OHO6uZjuNzPc5P5VbX2Mqrl/DogH4wBPDY9Nkaua2yrDnPaj74sDPgFF/jYZbFXncgAAAABJRU5ErkJggg=="/></i></div>
-              <h4><a href="">Transport</a></h4>
+              <h4><a href="{{ url_for('register_transport') }}">Transport</a></h4>
               <p>We can find all kinds of transport, provided by people or companies.</p>
             </div>
           </div>
@@ -118,7 +118,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
               <div class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAK5JREFUSEvtldENgzAMRB8TdITSTRiFTgajdJR2g24AckSkUMm6mCofReXX5p59Nrij8dM11kcBBmACeqeQJ3AHHl6hCmACV9Gl5dyOApbtRa8QFZcWKQEV3wGU37X7sJtL2XqN3xFImksJyO3Wiqi8pH0ugGr5UDxi0ee3oGYWnkFzQNSicAd/AGorvrboDVyiKk7+Kx+pcvXsbzpXHBhVg4mP+cqpi6bEZPz3AStCtx8ZT/zJdAAAAABJRU5ErkJggg=="/></div>
-              <h4><a href="">Jobs</a></h4>
+              <h4><a href="{{ url_for('register_job') }}">Jobs</a></h4>
               <p>Connecting refugees, displaced individuals, and asylum seekers with welcoming employers across the world.</p>
             </div>
           </div>
@@ -126,7 +126,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
               <div class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAI5JREFUSEvtldEKgCAMReeXRX/enxVGGzY3dlEsg3qT5jntuirR4CsN5pMl2DulN+YrgtwAd4FG6NZ7gMcFWhit5RjRDiLg/BFFkwt1sBHRokgcIRoRb8+sNS/KM7BesFaBsFEBGlFZd7KnEugIoYeDiq6+f4F8QaOJQe9DU4TCrLpK0ANz96I/lGb59wUHtnstGQxrGRkAAAAASUVORK5CYII="/></div>
-              <h4><a href="">Education</a></h4>
+              <h4><a href="{{ url_for('register_education') }}">Education</a></h4>
               <p>More than half of the world’s refugees are under the age of 18. Without access to education, an entire generation's future is at risk.</p>
             </div>
           </div>
@@ -134,7 +134,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
               <div class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAYVJREFUSEu1lQ9NA2EMxX9zgANAAaAAcAAKmIOBAnAAKAAUAAoABRsOmILhAPJIe+l9+/4l5JpctuTavva1fTdjYptNnJ8egDlwDBzao5pW9rwAr7UiawBnwC2w1+jyC7gCBLZlJYA7YNFB3xrYNT/FCGhkOYDe5J9G2Q1wbVnvgcuIkAKIlufOypXIadGcHizuPNKVAohPb7mEU6JVgJqZcux7cHSOVZSSOy2l917g0EUEeAQugA9byzSJBhppyYF4kU+A/o/uQLt9YO2dBE5z3ZY6UNyb3chRCvBjUd5VSlnPUe4Am5gnBqUA8osg/waIFGlYbg6c0pK7YKdoWIbckHWNOrYWgN6rqD+uzXxVs0P2IxvtcUJTbrhepPhfmnZl11TBvsdpF7Ub+bbL1a860DoPAlmTilPgPZTcc4hyr0qFHKLYqSIJWM885NMUO08UQUSbFFObIY5LtpVcjq0PjoBa4leVkJ7j0Xbp0SdTUiJTN1pRyXX2S+Zt9gBUWGm/mhzgFzWDVxnlcFgNAAAAAElFTkSuQmCC"/></div>
-              <h4><a href="">Others</a></h4>
+              <h4><a href="{{ url_for('register_other_help') }}">Others</a></h4>
               <p>People are offering different types of help: food, clothes, devices, services.</p>
             </div>
           </div>
