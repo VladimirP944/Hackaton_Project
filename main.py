@@ -83,7 +83,9 @@ def check_user_credentials():
                 session['username'] = username
                 session['type'] = (queries.get_user_type(username))['type']
                 session['user_id'] = (queries.get_user_id(username))['id']
-                return redirect(url_for('get_volunteer_page', user_type=session["type"], name=session["username"]))
+                if session["type"] == "volunteer":
+                    return redirect(url_for('get_volunteer_page'))
+                return redirect(url_for('get_refugee_page'))
             else:
                 flash('Wrong password/user')
         else:
@@ -193,7 +195,7 @@ def register_education():
 @app.route("/volunteer-page", methods=['GET', 'POST'])
 def get_volunteer_page():
     if request.method == 'GET':
-        return render_template("volunteers-page.html")
+        return render_template("volunteers-page.html", user_type=session["type"], name=session["username"])
     else:
         return redirect(url_for("index"))
 
@@ -201,7 +203,7 @@ def get_volunteer_page():
 @app.route("/refugee-page", methods=['GET', 'POST'])
 def get_refugee_page():
     if request.method == 'GET':
-        return render_template("refugees-page.html")
+        return render_template("refugees-page.html", user_type=session["type"], name=session["username"])
     else:
         return redirect(url_for("index"))
 
