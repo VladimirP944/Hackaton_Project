@@ -101,7 +101,7 @@ def delete_user():
 
 
 @app.route('/delete_location')
-def delete_user():
+def delete_location():
     # TODO get address
     # queries.delete_location(queries.get_location_id(address))
     flash('Location Deleted')
