@@ -28,7 +28,7 @@ def welcome_user():
 
 
 @app.route('/register', methods=['GET', 'POST'])
-def register_home_owner():
+def register_user():
     if request.method == 'POST':
         username = request.form.get('username')
 
