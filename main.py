@@ -19,8 +19,8 @@ load_dotenv()
 @app.route("/", methods=['GET', 'POST'])
 def welcome_user():
     if "username" not in session:
-        return render_template("welcome.html")
-    return render_template("welcome.html", user=session["username"].split('@')[0].capitalize())
+        return render_template("index.html")
+    return render_template("index.html", user=session["username"].split('@')[0].capitalize())
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -52,9 +52,9 @@ def check_user_credentials():
                 session['user_id'] = (queries.get_user_id(username))['id']
                 return redirect(url_for('welcome_user'))
             else:
-                flash('Wrong password')
+                flash('Wrong user/ password')
         else:
-            flash('User does not exist')
+            flash('Wrong user/ password')
     return redirect(url_for("welcome_user"))
 
 
@@ -62,6 +62,14 @@ def check_user_credentials():
 def logout():
     session.clear()
     return redirect(url_for("welcome_user"))
+
+
+@app.route("/applicant-registration", methods=['GET', 'POST'])
+def register_applicant():
+    if request.method == 'GET':
+        return render_template("applicant-registration.html")
+    else:
+        return redirect(url_for("welcome_user"))
 
 
 @app.route('/delete_user')
