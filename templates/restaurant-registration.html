@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -98,7 +107,7 @@
         <div class="col-md-6 offset-md-3">
             <div class="signup-form">
                 <form action="" class="mt-5 border p-4 bg-light shadow">
-                    <h4 class="mb-5 text-secondary">Register New Location</h4>
+                    <h4 class="mb-5 text-secondary">Register New Restaurant</h4>
                     <div class="row">
                         <div class="mb-3 col-md-6">
                             <label>Name<span class="text-danger">*</span></label>
@@ -110,36 +119,50 @@
                             <input type="text" name="address" class="form-control" placeholder="Enter Address">
                         </div>
 
-                        <div class="mb-3 col-md-12">
-                            <label>Capacity<span class="text-danger">*</span></label>
-                            <input type="text" name="capacity" class="form-control" placeholder="Enter Number Of People You Can Accommodate">
+                        <div class="mb-3 col-md-6">
+                            <label>Phone<span class="text-danger">*</span></label>
+                            <input type="text" name="phone" class="form-control" placeholder="Enter Phone Number">
+                        </div>
+
+                        <div class="mb-3 col-md-6">
+                            <label>Email<span class="text-danger">*</span></label>
+                            <input type="text" name="email" class="form-control" placeholder="Enter Email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jobDescription">Description<span class="text-danger">*</span></label>
+                            <textarea class="form-control" id="restaurantDescription" rows="3"></textarea>
                         </div>
 
                         <div class="mb-3 col-md-12">
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="pets" id="pets" value="true">
-                              <label class="form-check-label" for="pets">Pet-Friendly</label>
+                              <input class="form-check-input" type="radio" name="vegetarian" id="vegetarian" value="true">
+                              <label class="form-check-label" for="vegetarian">Vegetarian</label>
                             </div>
 
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="disability" id="disability" value="true">
-                              <label class="form-check-label" for="disability">Disability-Friendly</label>
+                              <input class="form-check-input" type="radio" name="vegan" id="vegan" value="true">
+                              <label class="form-check-label" for="vegan">Vegan</label>
                             </div>
 
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="parking" id="parking" value="true">
-                              <label class="form-check-label" for="parking">Parking</label>
+                              <input class="form-check-input" type="radio" name="halal" id="halal" value="true">
+                              <label class="form-check-label" for="halal">Halal</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="kosher" id="kosher" value="true">
+                              <label class="form-check-label" for="kosher">Kosher</label>
                             </div>
                         </div>
-
 
                         <div class="custom-file mb-3 col-md-12">
-                            <input type="file" class="custom-file-input" id="locationPhoto">
-                            <label class="custom-file-label" for="locationPhoto">Select Photo</label>
+                            <input type="file" class="custom-file-input" id="restaurantPhoto">
+                            <label class="custom-file-label" for="restaurantPhoto">Select Photo</label>
                         </div>
 
                         <div class="col-md-12">
-                           <button class="btn btn-success float-end">Register Location</button>
+                           <button class="btn btn-success float-end">Register Restaurant</button>
                         </div>
                     </div>
                 </form>
