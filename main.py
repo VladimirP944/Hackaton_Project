@@ -1,16 +1,20 @@
+import os
+
 from flask import Flask, render_template, url_for, session, request, flash, redirect, Response
 from dotenv import load_dotenv
 from werkzeug.security import generate_password_hash
 from werkzeug.security import check_password_hash
 
-from util import json_response
+from util import json_response, upload_picture, remove_picture
 import mimetypes
 import queries
 
 import json
 
-mimetypes.add_type('application/javascript', '.js')
 app = Flask(__name__)
+UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'static')
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+mimetypes.add_type('application/javascript', '.js')
 app.secret_key = 'coolHack2'
 
 load_dotenv()
