@@ -15,7 +15,6 @@ CREATE TABLE users (
     extra_persons INTEGER DEFAULT 0,
     phone_number INTEGER,
     type VARCHAR,
-    documents VARCHAR,
     identity_card VARCHAR,
     applied_for_home boolean DEFAULT false,
     home_id INTEGER,
