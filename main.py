@@ -108,6 +108,70 @@ def delete_location():
     return redirect(url_for("index"))
 
 
+@app.route("/location-registration", methods=['GET', 'POST'])
+def register_location():
+    if request.method == 'GET':
+        return render_template("location-registration.html")
+    else:
+        return redirect(url_for("index"))
+
+
+@app.route("/job-registration", methods=['GET', 'POST'])
+def register_job():
+    if request.method == 'GET':
+        return render_template("job-registration.html")
+    else:
+        return redirect(url_for("index"))
+
+
+@app.route("/other-help-registration", methods=['GET', 'POST'])
+def register_other_help():
+    if request.method == 'GET':
+        return render_template("other-help-registration.html")
+    else:
+        return redirect(url_for("index"))
+
+
+@app.route("/medical-registration", methods=['GET', 'POST'])
+def register_medical():
+    if request.method == 'GET':
+        return render_template("medical-registration.html")
+    else:
+        return redirect(url_for("index"))
+
+
+@app.route("/transport-registration", methods=['GET', 'POST'])
+def register_transport():
+    if request.method == 'GET':
+        return render_template("transport-registration.html")
+    else:
+        return redirect(url_for("index"))
+
+
+@app.route("/education-registration", methods=['GET', 'POST'])
+def register_education():
+    if request.method == 'GET':
+        return render_template("education-registration.html")
+    else:
+        return redirect(url_for("index"))
+
+
+@app.route("/volunteer-page", methods=['GET', 'POST'])
+def get_volunteer_page():
+    if request.method == 'GET':
+        return render_template("volunteers-page.html")
+    else:
+        return redirect(url_for("index"))
+
+
+@app.route("/refugee-page", methods=['GET', 'POST'])
+def get_refugee_page():
+    if request.method == 'GET':
+        return render_template("refugees-page.html")
+    else:
+        return redirect(url_for("index"))
+
+
 def main():
     app.run(debug=True)
 
