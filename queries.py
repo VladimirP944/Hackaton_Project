@@ -110,12 +110,13 @@ def get_user_type(username):
     return data_manager.execute_select(query, {'username': username}, fetchall=False)
 
 
-def add_location(user_id, address, available_space, total_space, photo_id):
+def add_location(name, user_id, address, available_space, total_space, photo_id):
     query = """
             INSERT INTO locations VALUES
-                (DEFAULT, %(user_id)s, %(address)s, %(available_space)s, %(total_space)s, %(photo_id)s)
+                (DEFAULT, %(name)s, %(user_id)s, %(address)s, %(available_space)s, %(total_space)s, %(photo_id)s)
             """
-    data_manager.execute_select(query, {"user_id": user_id,
+    data_manager.execute_select(query, {"name": name,
+                                        "user_id": user_id,
                                         "address": address,
                                         "available_space": available_space,
                                         "total_space": total_space,
