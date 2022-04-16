@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="../static/assets/img/favicon.png" rel="icon">
-  <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="../static/assets/favicon/favicon.png" rel="icon">
+{#  <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">#}
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -44,8 +44,6 @@
   <link rel="stylesheet" href="../static/assets/css/loginStyle.css">
   <!-- Demo CSS -->
   <link rel="stylesheet" href="../static/assets/css/login.css">
-
-  <script  src="../static/assets/js/loginScript.js"></script>
 
 </head>
 
@@ -105,20 +103,46 @@
         </div>
       </div>
     </div>
+
+{#      Login Modal#}
+
             <div id="id01" class="modal">
             <form class="modal-content animate" action="{{ url_for('check_user_credentials') }}" method="POST">
-                <div class="container" id="modal-container">
-                    <label for="username"><b></b></label>
+                <div class="container" id='login-modal'>
+                    <label for="username"><b>E-mail</b></label>
                     <input type="email" placeholder="Enter Username" name="username" id='username' required>
                     <br>
-                    <label for="password"><b></b></label>
+                    <label for="password"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password" name="password" id='password' required>
                     <br>
                   <br>
                     <button class="btn btn-outline-success" type="submit">Login</button>
                    <br>
                   <br>
-                  <p>Don't have an account? <a href="" onclick="document.getElementById('id02').style.display='block'">Sign UP!</a></p>
+                  <p>Don't have an account? <a href="#" onclick="document.getElementById('id02').style.display='block'">Sign UP!</a></p>
+                </div>
+            </form>
+        </div>
+
+{#      Register modal#}
+
+      <div id="id02" class="modal">
+            <form class="modal-content animate" action="{{ url_for('register_user') }}" enctype="multipart/form-data" method="POST">
+                <div class="container" id='register-modal'>
+                    <label for="username"><b>E-mail</b></label>
+                    <input type="email" placeholder="Enter Username" name="username" id='username' required>
+                    <br>
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="password" required>
+
+                    <p><label for="file"><b></b></label></p>
+                    <p>Profile image  <input type="file" id="file" name="file"></p>
+
+                    <button class="btn btn-outline-success" type="submit">Register</button>
+                </div>
+                <div align="center">
+                    <br>
+                    <p>Have an account? <a href="{{ url_for('check_user_credentials') }}">Sign IN</a></p>
                 </div>
             </form>
         </div>
@@ -142,7 +166,7 @@
                 <li>For NGO.</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#connect" class="btn-buy" id="loginButton" onclick="document.getElementById('id01').style.display='block'">Login</a>
+                <a href="#" class="btn-buy" id="loginButton" onclick="document.getElementById('id01').style.display='block'">Login</a>
               </div>
             </div>
           </div>
@@ -630,7 +654,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="../forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="../static/assets/forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
